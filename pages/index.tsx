@@ -153,7 +153,7 @@ const Home: NextPage = () => {
               <p>
                 View on{' '}
                 <a
-                  href={`https://testnets.opensea.io/assets/goerli/${txData?.to}`}
+                  href={`https://testnets.opensea.io/collection/message-nft`}
                 >
                   Opensea
                 </a>

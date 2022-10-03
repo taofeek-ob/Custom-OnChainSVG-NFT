@@ -95,15 +95,16 @@ const Home: NextPage = () => {
 </div>
               <button
                 style={{ marginTop: 24 }}
-                disabled={!mint || isMintLoading || isMintStarted || text===""}
+                disabled={!mint}
                 className="button"
-                data-mint-loading={isMintLoading}
-                data-mint-started={isMintStarted}
+                data-mint-loading={isMintLoading && !isMintStarted}
+                data-mint-started={isMintStarted && !isMinted}
+               
                 onClick={() => mint?.()}
               >
-                {isMintLoading && 'Waiting for approval'}
-                {isMintStarted && 'Minting...'}
-                {!isMintLoading && !isMintStarted && 'Mint'}
+                
+                
+                {isMintLoading ? "Waiting for Approval" : !isMintLoading && isMintStarted && !isMinted ? "Minting" : "Mint"}
               </button>
               </>
             )}
